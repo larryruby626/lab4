@@ -31,7 +31,7 @@ String ice_opt="微冰";
                                 suger="少糖";
                                 break;
                             case R.id.radioButton3:
-                                suger="";
+                                suger="半糖";
                                 break;
                             case R.id.radioButton4:
                                 suger="全糖";
@@ -62,6 +62,7 @@ String ice_opt="微冰";
     sent_btn.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
+
          set_drink = (EditText) findViewById(R.id.editText);
          String temp = set_drink.getText().toString();
             Intent i = new Intent();
@@ -69,7 +70,7 @@ String ice_opt="微冰";
             b.putString("suger_level",suger);
             b.putString("drink_level",temp);
             b.putString("ice_level",ice_opt);
-            i.putExtra(b) ;
+            i.putExtras(b);
             setResult(101,i);
             finish();
         }

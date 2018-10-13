@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
 
     Button btn ;
     TextView t_drink;
-    TextView t_sugar;
+    TextView t_suger;
     TextView t_ice ;
 
 
@@ -35,20 +35,20 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == 0){
-            if (requestCode == 101)
+        if (requestCode == 0){
+            if (resultCode == 101)
             {
                 Bundle b = data.getExtras();
                 String str1 = b.getString("drink_level");
-                String str2 = b.getString("sugar_level");
+                String str2 = b.getString("suger_level");
                 CharSequence str3 = b.getString("ice_level");
 
                 t_drink = (TextView) findViewById(R.id.textView8);
                 t_ice = (TextView) findViewById(R.id.textView9);
-                t_sugar= (TextView)findViewById(R.id.textView11);
+                t_suger= (TextView)findViewById(R.id.textView11);
 
                 t_drink.setText(str1);
-                t_sugar.setText(str2);
+                t_suger.setText(str2);
                 t_ice.setText(str3);
             }
         }
